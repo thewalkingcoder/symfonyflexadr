@@ -1,6 +1,7 @@
 <?php
 
 namespace App\User\Domain\Entity;
+use App\User\Domain\UserDto;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -20,6 +21,19 @@ class User
      * @ORM\Column(name="nom")
      */
     private $nom;
+
+
+    public function __construct(?string $nom)
+    {
+        $this->nom = $nom;
+    }
+
+    public function edit(UserDto $dto)
+    {
+        $this->nom = $dto->nom;
+        return $this;
+    }
+
 
     /**
      * @return mixed
