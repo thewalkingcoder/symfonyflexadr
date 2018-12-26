@@ -10,3 +10,5 @@
 /phpunit.xml
 :memory
 ###< symfony/phpunit-bridge ###
+
+.idea/
